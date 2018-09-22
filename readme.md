@@ -1,6 +1,6 @@
 # Test_Driven_Development_A
-[![Build Status](https://travis-ci.org/dpiet/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/dpiet/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Build Status](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment)
+[![Coverage Status](https://coveralls.io/repos/github/rohithjayarajan/PID_TestDrivenDevelopment/badge.svg?branch=master)](https://coveralls.io/github/rohithjayarajan/PID_TestDrivenDevelopment?branch=master)
 ---
 
 ## Overview
@@ -9,8 +9,8 @@ string, then the position at which the text is found is returned.
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/rohithjayarajan/ENPM808X_Software_Development_for_Robotics.git
-cd ENPM808X_Software_Development_for_Robotics/Week\ 3/SoftwareEngineering_9_4/
+git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
+cd PID_TestDrivenDevelopment
 mkdir build
 cd build
 cmake ..
@@ -26,22 +26,22 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/rohithjayarajan/ENPM808X_Software_Development_for_Robotics.git
+git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
 ```
 
-In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of SoftwareEngineering_9_4-eclipse
+In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of PID_TestDrivenDevelopment-eclipse
 
 ```
 cd ~/workspace
-mkdir -p SoftwareEngineering_9_4-eclipse
-cd SoftwareEngineering_9_4-eclipse
-cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../ENPM808X_Software_Development_for_Robotics/Week\ 3/SoftwareEngineering_9_4/
+mkdir -p PID_TestDrivenDevelopment-eclipse
+cd PID_TestDrivenDevelopment-eclipse
+cmake -G "Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -D CMAKE_ECLIPSE_VERSION=4.7.0 -D CMAKE_CXX_COMPILER_ARG1=-std=c++14 ../PID_TestDrivenDevelopment
 ```
 
 ## Import
 
 Open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace -> 
-Select "SoftwareEngineering_9_4-eclipse" directory created previously as root directory -> Finish
+Select "PID_TestDrivenDevelopment-eclipse" directory created previously as root directory -> Finish
 
 # Edit
 
@@ -50,12 +50,12 @@ Source files may be edited under the "[Source Directory]" label in the Project E
 
 ## Build
 
-To build the project, in Eclipse, unfold SoftwareEngineering_9_4-eclipse project in Project Explorer,
+To build the project, in Eclipse, unfold PID_TestDrivenDevelopment-eclipse project in Project Explorer,
 unfold Build Targets, double click on "all" to build all projects.
 
 ## Run
 
-1. In Eclipse, right click on the SoftwareEngineering_9_4-eclipse in Project Explorer,
+1. In Eclipse, right click on the PID_TestDrivenDevelopment-eclipse in Project Explorer,
 select Run As -> Local C/C++ Application
 
 2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
@@ -67,7 +67,7 @@ select Run As -> Local C/C++ Application
 1. Set breakpoint in source file (i.e. double click in the left margin on the line you want 
 the program to break).
 
-2. In Eclipse, right click on the SoftwareEngineering_9_4-eclipse in Project Explorer, select Debug As -> 
+2. In Eclipse, right click on the PID_TestDrivenDevelopment-eclipse in Project Explorer, select Debug As -> 
 Local C/C++ Application, choose the binaries to run (e.g. shell-app).
 
 3. If prompt to "Confirm Perspective Switch", select yes.
