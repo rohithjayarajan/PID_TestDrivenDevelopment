@@ -4,8 +4,7 @@
 ---
 
 ## Overview
-Program to find if a text is part of a string. If the text is a part of the 
-string, then the position at which the text is found is returned.
+Test driven development project to design a PID controller.
 
 ## Standard install via command-line
 ```
