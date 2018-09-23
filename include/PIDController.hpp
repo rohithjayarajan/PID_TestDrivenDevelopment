@@ -47,7 +47,7 @@ class PIDController {
    *   @return double value of the computed velocity
    */
 
-  double computeVelocity(double targetSetpoint, double actualVelocity);
+  double computeVelocity(double targetSetPoint, double actualVelocity);
   /**
    *   @brief Function to set PID gains Kp, Ki and Kd
    *
