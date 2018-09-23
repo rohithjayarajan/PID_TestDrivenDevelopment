@@ -13,8 +13,8 @@
  *
  */
 
-#ifndef TEST_DRIVEN_DEVELOPMENT_A_INCLUDE_PIDCONTROLLER_HPP_
-#define TEST_DRIVEN_DEVELOPMENT_A_INCLUDE_PIDCONTROLLER_HPP_
+#ifndef INCLUDE_PIDCONTROLLER_HPP_
+#define INCLUDE_PIDCONTROLLER_HPP_
 
 class PIDController {
  public:
@@ -74,4 +74,4 @@ class PIDController {
   double Kd;  // declare differential gain Kd
 };
 
-#endif  // TEST_DRIVEN_DEVELOPMENT_A_INCLUDE_PIDCONTROLLER_HPP_
+#endif  // INCLUDE_PIDCONTROLLER_HPP_

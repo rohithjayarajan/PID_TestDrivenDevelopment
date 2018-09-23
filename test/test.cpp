@@ -19,12 +19,12 @@
 
 std::shared_ptr<PIDController> testObject;
 
-
+//  test to check the correctness of computeVelocity method
 TEST(PIDController, velocityComputedCheck) {
   testObject = std::make_shared<PIDController>();
   ASSERT_EQ(2100.0, testObject->computeVelocity(10.0, 20.0));
 }
-
+//  test to ensure time step is greater than zero
 TEST(PIDController, dtGreaterThanZeroCheck) {
   testObject = std::make_shared<PIDController>();
   ASSERT_LT(0.0, testObject->dt);
