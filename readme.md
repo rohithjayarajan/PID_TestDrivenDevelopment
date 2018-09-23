@@ -6,6 +6,8 @@
 ## Overview
 Test driven development project to design a PID controller.
 
+###Navigator-Rohith Jayarajan Driver-Harsh Kakashaniya
+
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
