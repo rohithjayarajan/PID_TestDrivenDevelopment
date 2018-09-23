@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/PIDController.hpp
+
+/home/rohith/PID_TestDrivenDevelopment/app/PIDController.cpp
+PIDController.hpp
+/home/rohith/PID_TestDrivenDevelopment/app/PIDController.hpp
+
+/home/rohith/PID_TestDrivenDevelopment/app/main.cpp
+iostream
+-
+PIDController.hpp
+-
+
