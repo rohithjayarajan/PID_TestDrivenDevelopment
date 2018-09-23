@@ -6,6 +6,7 @@
 ## Overview
 Test driven development project to design a PID controller.
 #### Authors - Rohith Jayarajan(Driver) Harsh Kakashaniya(Navigator) as Team A, for Part 1
+#### Authors - Likhita Madiraju(Driver) Ajeet Wankhede(Navigator) as Team B, for Part 2 
 
 ## Standard install via command-line
 ```
