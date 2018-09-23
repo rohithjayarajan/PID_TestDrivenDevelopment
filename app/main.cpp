@@ -15,8 +15,29 @@
  */
 
 #include <iostream>
+#include <memory>
 #include <PIDController.hpp>
 
+using std::shared_ptr;
+using std::cout;
+using std::endl;
+using std::make_shared;
+
 int main() {
+  // Created an object of class PIDController.
+  shared_ptr<PIDController> PID;
+  PID = make_shared<PIDController>();
+  // Calling the setGains function to set the values of gains Kp, Ki, and Kd.
+  PID->setGains(0.4, 0.2, 0.01);
+  double actualVelocity = 1.0;
+  double setVelocity = 5.0;
+  cout << "Initial velocity = " << actualVelocity << endl;
+  cout << "Reference velocity = " << setVelocity << endl;
+  // Calling the computeVelocity function by setting the targetSetpoint
+  // and actualVelocity.
+  actualVelocity = PID->computeVelocity(setVelocity, actualVelocity);
+  cout << "Current velocity = " << actualVelocity << endl;
+  // Calling the displayGains function to display gains.
+  PID->displayGains();
   return 0;
 }
