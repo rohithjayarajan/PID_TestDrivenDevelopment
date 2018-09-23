@@ -1,6 +1,6 @@
 /**
  *  Copyright 2018 rohith jayarajan
- *  @file    PIDController.cpp
+ *  @file    PIDController.hpp
  *  @author  rohithjayarajan (driver) and harshkakashaniya (navigator)
  *  @date    9/22/2018
  *  @version 1.0
