@@ -8,6 +8,11 @@ Test driven development project to design a PID controller.
 #### Authors - Rohith Jayarajan(Driver) Harsh Kakashaniya(Navigator) as Team A, for Part 1
 #### Authors - Likhita Madiraju(Driver) Ajeet Wankhede(Navigator) as Team B, for Part 2 
 
+## Group Discussion Notes
+
+1. The implementation and test passing satisfy the original class design.   
+2. To Do- To check if PID Controller is converging for given values of gains. 
+ 
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
