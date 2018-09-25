@@ -1,12 +1,18 @@
 # Test_Driven_Development_A
-[![Build Status](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment)
-[![Coverage Status](https://coveralls.io/repos/github/rohithjayarajan/PID_TestDrivenDevelopment/badge.svg?branch=master)](https://coveralls.io/github/rohithjayarajan/PID_TestDrivenDevelopment?branch=master)
+[![Build Status](https://travis-ci.org/likhitam/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/likhitam/PID_TestDrivenDevelopment)
+[![Coverage Status](https://coveralls.io/repos/github/likhitam/PID_TestDrivenDevelopment/badge.svg)](https://coveralls.io/github/likhitam/PID_TestDrivenDevelopment)
 ---
 
 ## Overview
 Test driven development project to design a PID controller.
 #### Authors - Rohith Jayarajan(Driver) Harsh Kakashaniya(Navigator) as Team A, for Part 1
+#### Authors - Likhita Madiraju(Driver) Ajeet Wankhede(Navigator) as Team B, for Part 2 
 
+## Group Discussion Notes
+
+1. The implementation and test passing satisfy the original class design.   
+2. To Do- To check if PID Controller is converging for given values of gains. 
+ 
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git

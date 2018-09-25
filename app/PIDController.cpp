@@ -12,9 +12,11 @@
  *  Class member functions for PIDController.hpp
  *
  */
-
+#include <iostream>
 #include "PIDController.hpp"
 
+using std::cout;
+using std::endl;
 /**
  *   @brief Default constructor for PIDController
  *          with Kp, Ki and Kd initialized to
@@ -28,8 +30,8 @@ PIDController::PIDController() {
   // TODO(rohithjayarajan) Auto-generated constructor stub
   Kp = 10.0;
   Ki = 100.0;
-  Kd = 1.0;
-  dt = -0.01;
+  Kd = 0.01;
+  dt = 0.01;
 }
 
 /**
@@ -55,10 +57,13 @@ PIDController::~PIDController() {
  *   @return double value of the computed velocity
  */
 
-double PIDController::computeVelocity(double targetSetpoint,
+double PIDController::computeVelocity(double targetSetPoint,
                                       double actualVelocity) {
   // TODO(rohithjayarajan) computeVelocity stub
-  return 11.1;
+  actualVelocity = (this->Kp) * (targetSetPoint - actualVelocity)
+      + (this->Ki) * (targetSetPoint - actualVelocity) * (this->dt)
+      + (this->Kd) * (targetSetPoint - actualVelocity) / (this->dt);
+  return actualVelocity;
 }
 
 /**
@@ -72,6 +77,9 @@ double PIDController::computeVelocity(double targetSetpoint,
 
 void PIDController::setGains(double Kp, double Ki, double Kd) {
   // TODO(rohithjayarajan) setGains stub
+  this->Kp = Kp;
+  this->Ki = Ki;
+  this->Kd = Kd;
 }
 
 /**
@@ -84,4 +92,8 @@ void PIDController::setGains(double Kp, double Ki, double Kd) {
 
 void PIDController::displayGains() {
   // TODO(rohithjayarajan) displayGains stub
+  cout << "The gains used are: " << endl;
+  cout << "Kp = " << this->Kp << endl;
+  cout << "Ki = " << this->Ki << endl;
+  cout << "Kd = " << this->Kd << endl;
 }
