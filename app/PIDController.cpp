@@ -87,7 +87,7 @@ void PIDController::setGainKd(double Kd) {
  *   @param double value of Time Step dt
  *   @return nothing
  */
-void PIDController::setTimeStep(double Kd) {
+void PIDController::setTimeStep(double dt) {
 }
 /**
  *   @brief Function to get present values of

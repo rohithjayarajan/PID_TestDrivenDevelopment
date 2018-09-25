@@ -73,7 +73,7 @@ class PIDController {
    *   @param double value of Time Step dt
    *   @return nothing
    */
-  void setTimeStep(double Kd);
+  void setTimeStep(double dt);
   /**
    *   @brief Function to get present values of
    *          PID gain Kp

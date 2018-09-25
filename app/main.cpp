@@ -36,6 +36,6 @@ int main() {
   // and actualVelocity.
   actualVelocity = PID->computeVelocity(setVelocity, actualVelocity);
   cout << "Current velocity = " << actualVelocity << endl;
-  // Calling the displayGains function to display gains.
+  // Calling the getGains function to display gains.
   return 0;
 }
