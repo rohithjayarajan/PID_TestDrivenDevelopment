@@ -25,26 +25,20 @@ using std::endl;
  *   @param nothing
  *   @return nothing
  */
-
 PIDController::PIDController() {
-  // TODO(rohithjayarajan) Auto-generated constructor stub
   Kp = 10.0;
   Ki = 100.0;
   Kd = 0.01;
   dt = 0.01;
 }
-
 /**
  *   @brief Default destructor for PIDController
  *
  *   @param nothing
  *   @return nothing
  */
-
 PIDController::~PIDController() {
-  // TODO(rohithjayarajan) Auto-generated destructor stub
 }
-
 /**
  *   @brief Function to compute velocity given
  *          a known target setpoint and the
@@ -56,44 +50,77 @@ PIDController::~PIDController() {
  *          the type double
  *   @return double value of the computed velocity
  */
-
 double PIDController::computeVelocity(double targetSetPoint,
                                       double actualVelocity) {
-  // TODO(rohithjayarajan) computeVelocity stub
   actualVelocity = (this->Kp) * (targetSetPoint - actualVelocity)
       + (this->Ki) * (targetSetPoint - actualVelocity) * (this->dt)
       + (this->Kd) * (targetSetPoint - actualVelocity) / (this->dt);
   return actualVelocity;
 }
-
 /**
- *   @brief Function to set PID gains Kp, Ki and Kd
+ *   @brief Function to set PID gain Kp
  *
  *   @param double value of proportional gain
+ *   @return nothing
+ */
+void PIDController::setGainKp(double Kp) {
+}
+/**
+ *   @brief Function to set PID gain Ki
+ *
  *   @param double value of integral gain
+ *   @return nothing
+ */
+void PIDController::setGainKi(double Ki) {
+}
+/**
+ *   @brief Function to set PID gains Kd
+ *
  *   @param double value of differential gain
  *   @return nothing
  */
-
-void PIDController::setGains(double Kp, double Ki, double Kd) {
-  // TODO(rohithjayarajan) setGains stub
-  this->Kp = Kp;
-  this->Ki = Ki;
-  this->Kd = Kd;
+void PIDController::setGainKd(double Kd) {
 }
-
 /**
- *   @brief Function to display present values of
- *          PID gains Kp, Ki and Kd
+ *   @brief Function to set Time Step dt
  *
- *   @param nothing
+ *   @param double value of Time Step dt
  *   @return nothing
  */
-
-void PIDController::displayGains() {
-  // TODO(rohithjayarajan) displayGains stub
-  cout << "The gains used are: " << endl;
-  cout << "Kp = " << this->Kp << endl;
-  cout << "Ki = " << this->Ki << endl;
-  cout << "Kd = " << this->Kd << endl;
+void PIDController::setTimeStep(double Kd) {
+}
+/**
+ *   @brief Function to get present values of
+ *          PID gain Kp
+ *
+ *   @param nothing
+ *   @return double value of proportional gain
+ */
+double PIDController::getGainKp() {
+}
+/**
+ *   @brief Function to get present values of
+ *          PID gain Ki
+ *
+ *   @param nothing
+ *   @return double value of integral gain
+ */
+double PIDController::getGainKi() {
+}
+/**
+ *   @brief Function to get present values of
+ *          PID gain Kd
+ *
+ *   @param nothing
+ *   @return double value of differential gain
+ */
+double PIDController::getGainKd() {
+}
+/**
+ *   @brief Function to get Time Step dt
+ *
+ *   @param nothing
+ *   @return double value of Time Step dt
+ */
+double PIDController::getTimeStep() {
 }

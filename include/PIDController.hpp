@@ -33,7 +33,6 @@ class PIDController {
    *   @param nothing
    *   @return nothing
    */
-
   virtual ~PIDController();
   /**
    *   @brief Function to compute velocity given
@@ -46,32 +45,72 @@ class PIDController {
    *          the type double
    *   @return double value of the computed velocity
    */
-
   double computeVelocity(double targetSetPoint, double actualVelocity);
   /**
-   *   @brief Function to set PID gains Kp, Ki and Kd
+   *   @brief Function to set PID gain Kp
    *
    *   @param double value of proportional gain
+   *   @return nothing
+   */
+  void setGainKp(double Kp);
+  /**
+   *   @brief Function to set PID gain Ki
+   *
    *   @param double value of integral gain
+   *   @return nothing
+   */
+  void setGainKi(double Ki);
+  /**
+   *   @brief Function to set PID gains Kd
+   *
    *   @param double value of differential gain
    *   @return nothing
    */
-  void setGains(double Kp, double Ki, double Kd);
-
+  void setGainKd(double Kd);
   /**
-   *   @brief Function to display present values of
-   *          PID gains Kp, Ki and Kd
+   *   @brief Function to set Time Step dt
    *
-   *   @param nothing
+   *   @param double value of Time Step dt
    *   @return nothing
    */
-  void displayGains();
-  double dt;  // time step
+  void setTimeStep(double Kd);
+  /**
+   *   @brief Function to get present values of
+   *          PID gain Kp
+   *
+   *   @param nothing
+   *   @return double value of proportional gain
+   */
+  double getGainKp();
+  /**
+   *   @brief Function to get present values of
+   *          PID gain Ki
+   *
+   *   @param nothing
+   *   @return double value of integral gain
+   */
+  double getGainKi();
+  /**
+   *   @brief Function to get present values of
+   *          PID gain Kd
+   *
+   *   @param nothing
+   *   @return double value of differential gain
+   */
+  double getGainKd();
+  /**
+   *   @brief Function to get Time Step dt
+   *
+   *   @param nothing
+   *   @return double value of Time Step dt
+   */
+  double getTimeStep();
 
  private:
   double Kp;  // declare proportional gain Kp
   double Ki;  // declare integral gain Ki
   double Kd;  // declare differential gain Kd
+  double dt;  // time step
 };
 
 #endif  // INCLUDE_PIDCONTROLLER_HPP_

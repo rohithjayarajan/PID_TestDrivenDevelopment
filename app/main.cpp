@@ -28,7 +28,6 @@ int main() {
   shared_ptr<PIDController> PID;
   PID = make_shared<PIDController>();
   // Calling the setGains function to set the values of gains Kp, Ki, and Kd.
-  PID->setGains(0.4, 0.2, 0.01);
   double actualVelocity = 1.0;
   double setVelocity = 5.0;
   cout << "Initial velocity = " << actualVelocity << endl;
@@ -38,6 +37,5 @@ int main() {
   actualVelocity = PID->computeVelocity(setVelocity, actualVelocity);
   cout << "Current velocity = " << actualVelocity << endl;
   // Calling the displayGains function to display gains.
-  PID->displayGains();
   return 0;
 }
