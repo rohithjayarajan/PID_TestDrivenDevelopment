@@ -29,7 +29,7 @@ PIDController::PIDController() {
   Kp = 10.0;
   Ki = 100.0;
   Kd = 0.01;
-  dt = -0.01;
+  dt = 0.01;
 }
 /**
  *   @brief Default destructor for PIDController
@@ -64,6 +64,7 @@ double PIDController::computeVelocity(double targetSetPoint,
  *   @return nothing
  */
 void PIDController::setGainKp(double Kp) {
+  this->Kp = Kp;
 }
 /**
  *   @brief Function to set PID gain Ki
@@ -72,6 +73,7 @@ void PIDController::setGainKp(double Kp) {
  *   @return nothing
  */
 void PIDController::setGainKi(double Ki) {
+  this->Ki = Ki;
 }
 /**
  *   @brief Function to set PID gains Kd
@@ -80,6 +82,7 @@ void PIDController::setGainKi(double Ki) {
  *   @return nothing
  */
 void PIDController::setGainKd(double Kd) {
+  this->Kd = Kd;
 }
 /**
  *   @brief Function to set Time Step dt
@@ -88,6 +91,7 @@ void PIDController::setGainKd(double Kd) {
  *   @return nothing
  */
 void PIDController::setTimeStep(double dt) {
+  this->dt = dt;
 }
 /**
  *   @brief Function to get present values of
@@ -97,6 +101,7 @@ void PIDController::setTimeStep(double dt) {
  *   @return double value of proportional gain
  */
 double PIDController::getGainKp() {
+  return this->Kp;
 }
 /**
  *   @brief Function to get present values of
@@ -106,6 +111,7 @@ double PIDController::getGainKp() {
  *   @return double value of integral gain
  */
 double PIDController::getGainKi() {
+  return this->Ki;
 }
 /**
  *   @brief Function to get present values of
@@ -115,12 +121,14 @@ double PIDController::getGainKi() {
  *   @return double value of differential gain
  */
 double PIDController::getGainKd() {
+  return this->Kd;
 }
 /**
  *   @brief Function to get Time Step dt
- *
+ *return this->dt;
  *   @param nothing
  *   @return double value of Time Step dt
  */
 double PIDController::getTimeStep() {
+  return this->dt;
 }
