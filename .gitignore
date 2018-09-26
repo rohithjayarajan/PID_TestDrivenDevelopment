@@ -9,3 +9,9 @@ build/
 
 # Python
 *.pyc
+
+# Other Files
+.cproject
+.project
+.settings
+.vscode
