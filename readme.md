@@ -24,6 +24,15 @@ make
 Run program: ./app/shell-app
 ```
 
+## Building for code coverage
+```
+sudo apt-get install lcov
+cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
+make
+make code_coverage
+```
+This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
+
 ## Working with Eclipse IDE ##
 
 ## Installation

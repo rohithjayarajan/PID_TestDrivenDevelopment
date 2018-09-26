@@ -29,7 +29,7 @@ PIDController::PIDController() {
   Kp = 10.0;
   Ki = 100.0;
   Kd = 0.01;
-  dt = 0.01;
+  dt = -0.01;
 }
 /**
  *   @brief Default destructor for PIDController
