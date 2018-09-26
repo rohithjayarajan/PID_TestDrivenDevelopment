@@ -10,7 +10,7 @@ build/
 # Python
 *.pyc
 
-# Other Files
+# Other files
 .cproject
 .project
 .settings
