@@ -16,6 +16,13 @@
 #ifndef INCLUDE_PIDCONTROLLER_HPP_
 #define INCLUDE_PIDCONTROLLER_HPP_
 
+#include <iostream>
+
+/**
+ *  @brief Class PIDController
+ *  The PIDController class is a simple PID controller implementation
+ */
+
 class PIDController {
  public:
   /**

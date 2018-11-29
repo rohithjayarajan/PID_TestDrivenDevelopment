@@ -15,7 +15,6 @@
  */
 
 #include <PIDController.hpp>
-#include <iostream>
 
 int main() {
   // Created an object of class PIDController.

@@ -12,11 +12,9 @@
  *  Class member functions for PIDController.hpp
  *
  */
-#include <iostream>
+
 #include "PIDController.hpp"
 
-using std::cout;
-using std::endl;
 /**
  *   @brief Default constructor for PIDController
  *          with Kp, Ki and Kd initialized to
@@ -37,8 +35,7 @@ PIDController::PIDController() {
  *   @param nothing
  *   @return nothing
  */
-PIDController::~PIDController() {
-}
+PIDController::~PIDController() {}
 /**
  *   @brief Function to compute velocity given
  *          a known target setpoint and the
@@ -52,9 +49,9 @@ PIDController::~PIDController() {
  */
 double PIDController::computeVelocity(double targetSetPoint,
                                       double actualVelocity) {
-  actualVelocity = (this->Kp) * (targetSetPoint - actualVelocity)
-      + (this->Ki) * (targetSetPoint - actualVelocity) * (this->dt)
-      + (this->Kd) * (targetSetPoint - actualVelocity) / (this->dt);
+  actualVelocity = (this->Kp) * (targetSetPoint - actualVelocity) +
+                   (this->Ki) * (targetSetPoint - actualVelocity) * (this->dt) +
+                   (this->Kd) * (targetSetPoint - actualVelocity) / (this->dt);
   return actualVelocity;
 }
 /**
@@ -63,36 +60,28 @@ double PIDController::computeVelocity(double targetSetPoint,
  *   @param double value of proportional gain
  *   @return nothing
  */
-void PIDController::setGainKp(double Kp) {
-  this->Kp = Kp;
-}
+void PIDController::setGainKp(double Kp) { this->Kp = Kp; }
 /**
  *   @brief Function to set PID gain Ki
  *
  *   @param double value of integral gain
  *   @return nothing
  */
-void PIDController::setGainKi(double Ki) {
-  this->Ki = Ki;
-}
+void PIDController::setGainKi(double Ki) { this->Ki = Ki; }
 /**
  *   @brief Function to set PID gains Kd
  *
  *   @param double value of differential gain
  *   @return nothing
  */
-void PIDController::setGainKd(double Kd) {
-  this->Kd = Kd;
-}
+void PIDController::setGainKd(double Kd) { this->Kd = Kd; }
 /**
  *   @brief Function to set Time Step dt
  *
  *   @param double value of Time Step dt
  *   @return nothing
  */
-void PIDController::setTimeStep(double dt) {
-  this->dt = dt;
-}
+void PIDController::setTimeStep(double dt) { this->dt = dt; }
 /**
  *   @brief Function to get present values of
  *          PID gain Kp
@@ -100,9 +89,7 @@ void PIDController::setTimeStep(double dt) {
  *   @param nothing
  *   @return double value of proportional gain
  */
-double PIDController::getGainKp() {
-  return this->Kp;
-}
+double PIDController::getGainKp() { return this->Kp; }
 /**
  *   @brief Function to get present values of
  *          PID gain Ki
@@ -110,9 +97,7 @@ double PIDController::getGainKp() {
  *   @param nothing
  *   @return double value of integral gain
  */
-double PIDController::getGainKi() {
-  return this->Ki;
-}
+double PIDController::getGainKi() { return this->Ki; }
 /**
  *   @brief Function to get present values of
  *          PID gain Kd
@@ -120,15 +105,11 @@ double PIDController::getGainKi() {
  *   @param nothing
  *   @return double value of differential gain
  */
-double PIDController::getGainKd() {
-  return this->Kd;
-}
+double PIDController::getGainKd() { return this->Kd; }
 /**
  *   @brief Function to get Time Step dt
  *return this->dt;
  *   @param nothing
  *   @return double value of Time Step dt
  */
-double PIDController::getTimeStep() {
-  return this->dt;
-}
+double PIDController::getTimeStep() { return this->dt; }
