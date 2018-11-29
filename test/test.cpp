@@ -20,7 +20,7 @@
 //  test to check the correctness of computeVelocity method
 TEST(PIDController, velocityComputedCheck) {
   PIDController testObject1;
-  EXPECT_EQ(-120.0, testObject1.computeVelocity(10.0, 20.0));
+  EXPECT_EQ(-120.0, testObject1.computeControlSignalInfo(10.0, 20.0));
 }
 //  test to ensure Kp is set
 TEST(PIDController, isGainKpSet) {

@@ -1,9 +1,9 @@
 /**
  *  Copyright 2018 rohith jayarajan
  *  @file    PIDController.cpp
- *  @author  rohithjayarajan (driver) and harshkakashaniya (navigator)
- *  @date    9/22/2018
- *  @version 1.0
+ *  @author  rohithjayarajan
+ *  @date    11/29/2018
+ *  @version 2.0
  *
  *  @brief UMD ENPM 808X, Week 4, Test Driven Development
  *
@@ -14,6 +14,7 @@
  */
 
 #include "PIDController.hpp"
+#include "ControlSystemHelper.hpp"
 
 /**
  *   @brief Default constructor for PIDController
@@ -37,22 +38,23 @@ PIDController::PIDController() {
  */
 PIDController::~PIDController() {}
 /**
- *   @brief Function to compute velocity given
+ *   @brief Function to compute Control Signal information given
  *          a known target setpoint and the
  *          actual velocity
  *
  *   @param targetSetpoint is a double value of the
  *          setpoint of the target
- *   @param actualVelocity is the actual velocity of
+ *   @param initialVelocity is the actual velocity of
  *          the type double
- *   @return double value of the computed velocity
+ *   @return double value of the commandVelocity velocity
  */
-double PIDController::computeVelocity(double targetSetPoint,
-                                      double actualVelocity) {
-  actualVelocity = (this->Kp) * (targetSetPoint - actualVelocity) +
-                   (this->Ki) * (targetSetPoint - actualVelocity) * (this->dt) +
-                   (this->Kd) * (targetSetPoint - actualVelocity) / (this->dt);
-  return actualVelocity;
+double PIDController::computeControlSignalInfo(double targetSetPoint,
+                                               double initialVelocity) {
+  ControlSystemHelper helper;
+  double commandVelocity =
+      helper.computeVelocity(targetSetPoint, initialVelocity, Kp, Ki, Kd, dt);
+  double error = helper.computeError(targetSetPoint);
+  return commandVelocity;
 }
 /**
  *   @brief Function to set PID gain Kp

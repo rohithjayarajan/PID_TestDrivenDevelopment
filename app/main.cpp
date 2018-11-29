@@ -28,7 +28,7 @@ int main() {
   std::cout << "Initial velocity = " << actualVelocity << std::endl;
   std::cout << "Reference velocity = " << setVelocity << std::endl;
 
-  actualVelocity = PID.computeVelocity(setVelocity, actualVelocity);
+  actualVelocity = PID.computeControlSignalInfo(setVelocity, actualVelocity);
   std::cout << "Current velocity = " << actualVelocity << std::endl;
 
   std::cout << "Values of PID gains are as follows" << std::endl;
