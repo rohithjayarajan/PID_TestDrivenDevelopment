@@ -17,39 +17,37 @@
 #include <memory>
 #include "PIDController.hpp"
 
-std::shared_ptr<PIDController> testObject;
-
 //  test to check the correctness of computeVelocity method
 TEST(PIDController, velocityComputedCheck) {
-  testObject = std::make_shared<PIDController>();
-  EXPECT_EQ(-120.0, testObject->computeVelocity(10.0, 20.0));
+  PIDController testObject1;
+  EXPECT_EQ(-120.0, testObject1.computeVelocity(10.0, 20.0));
 }
 //  test to ensure Kp is set
 TEST(PIDController, isGainKpSet) {
-  testObject = std::make_shared<PIDController>();
-  testObject->setGainKp(12.56);
-  EXPECT_EQ(12.56, testObject->getGainKp());
+  PIDController testObject2;
+  testObject2.setGainKp(12.56);
+  EXPECT_EQ(12.56, testObject2.getGainKp());
 }
 //  test to ensure Ki is set
 TEST(PIDController, isGainKiSet) {
-  testObject = std::make_shared<PIDController>();
-  testObject->setGainKi(567.76);
-  EXPECT_EQ(567.76, testObject->getGainKi());
+  PIDController testObject3;
+  testObject3.setGainKi(567.76);
+  EXPECT_EQ(567.76, testObject3.getGainKi());
 }
 //  test to ensure Kd is set
 TEST(PIDController, isGainKdSet) {
-  testObject = std::make_shared<PIDController>();
-  testObject->setGainKd(23.23);
-  EXPECT_EQ(23.23, testObject->getGainKd());
+  PIDController testObject4;
+  testObject4.setGainKd(23.23);
+  EXPECT_EQ(23.23, testObject4.getGainKd());
 }
 //  test to ensure dt is set
 TEST(PIDController, isDtSet) {
-  testObject = std::make_shared<PIDController>();
-  testObject->setTimeStep(0.02);
-  EXPECT_EQ(0.02, testObject->getTimeStep());
+  PIDController testObject5;
+  testObject5.setTimeStep(0.02);
+  EXPECT_EQ(0.02, testObject5.getTimeStep());
 }
 //  test to ensure time step is greater than zero
 TEST(PIDController, dtGreaterThanZeroCheck) {
-  testObject = std::make_shared<PIDController>();
-  EXPECT_LT(0.0, testObject->getTimeStep());
+  PIDController testObject6;
+  EXPECT_LT(0.0, testObject6.getTimeStep());
 }
