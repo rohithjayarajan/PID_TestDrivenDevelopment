@@ -23,7 +23,12 @@
  *   @param nothing
  *   @return nothing
  */
-ControlSystemHelper::ControlSystemHelper() {}
+ControlSystemHelper::ControlSystemHelper() {
+  Kp = 0.0;
+  Ki = 0.0;
+  Kd = 0.0;
+  dt = 0.0;
+}
 /**
  *   @brief Default destructor for ControlSystemHelper
  *
@@ -44,11 +49,20 @@ ControlSystemHelper::~ControlSystemHelper() {}
  *   @param ki_, the integral gain
  *   @param kd_, the differential gain
  *   @param dt_, the time step
- *   @return double value of the computed velocity
+ *   @return double value of the output velocity
  */
-double computeVelocity(double targetSetPoint_, double initialVelocity_,
-                       double kp_, double ki_, double kd_, double dt_) {
-  return 0.0;
+double ControlSystemHelper::computeVelocity(double targetSetPoint_,
+                                            double initialVelocity_, double kp_,
+                                            double ki_, double kd_,
+                                            double dt_) {
+  Kp = kp_;
+  Ki = ki_;
+  Kd = kd_;
+  dt = dt_;
+  outputVelocity = (Kp) * (targetSetPoint_ - initialVelocity_) +
+                   (Ki) * (targetSetPoint_ - initialVelocity_) * (dt) +
+                   (Kd) * (targetSetPoint_ - initialVelocity_) / (dt);
+  return outputVelocity;
 }
 /**
  *   @brief Function to compute error in tracking
@@ -58,6 +72,6 @@ double computeVelocity(double targetSetPoint_, double initialVelocity_,
  *
  *   @return double value of the tracking error
  */
-double ControlSystemHelper::computeVelocity(double targetSetPoint_) {
-  return 0.0;
+double ControlSystemHelper::computeError(double targetSetPoint_) {
+  return (targetSetPoint_ - outputVelocity);
 }

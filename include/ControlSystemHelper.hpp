@@ -55,8 +55,9 @@ class ControlSystemHelper {
    *   @param dt_, the time step
    *   @return double value of the computed velocity
    */
-  double computeVelocity(double targetSetPoint_, double initialVelocity_,
-                         double kp_, double ki_, double kd_, double dt_);
+  virtual double computeVelocity(double targetSetPoint_,
+                                 double initialVelocity_, double kp_,
+                                 double ki_, double kd_, double dt_);
   /**
    *   @brief Function to compute error in tracking
    *
@@ -65,7 +66,7 @@ class ControlSystemHelper {
    *
    *   @return double value of the tracking error
    */
-  double computeVelocity(double targetSetPoint_);
+  virtual double computeError(double targetSetPoint_);
 
  private:
   double Kp;              // declare proportional gain Kp
