@@ -1,6 +1,7 @@
 # Test_Driven_Development_A
-[![Build Status](https://travis-ci.org/likhitam/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/likhitam/PID_TestDrivenDevelopment)
-[![Coverage Status](https://coveralls.io/repos/github/likhitam/PID_TestDrivenDevelopment/badge.svg)](https://coveralls.io/github/likhitam/PID_TestDrivenDevelopment)
+[![Build Status](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment)
+[![Coverage Status](https://coveralls.io/repos/github/rohithjayarajan/PID_TestDrivenDevelopment/badge.svg?branch=master)](https://coveralls.io/github/rohithjayarajan/PID_TestDrivenDevelopment?branch=master)
+
 ---
 
 ## Overview
