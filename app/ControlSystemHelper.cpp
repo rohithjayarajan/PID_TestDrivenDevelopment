@@ -28,6 +28,7 @@ ControlSystemHelper::ControlSystemHelper() {
   Ki = 0.0;
   Kd = 0.0;
   dt = 0.0;
+  outputVelocity = 0.0;
 }
 /**
  *   @brief Default destructor for ControlSystemHelper
