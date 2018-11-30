@@ -13,25 +13,34 @@
  *
  */
 
-#include "ControlSystemHelper.hpp"
 #include "PIDController.hpp"
 #include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
-using namespace std;
 using ::testing::_;
 using ::testing::AtLeast;
 using ::testing::Return;
 
+/**
+ *  @brief Class MockControlSystemHelper
+ *  The MockControlSystemHelper class helps to create a mock class object for
+ * testing purposes in GMock tools
+ */
 class MockControlSystemHelper : public ControlSystemHelper {
  public:
-  MockControlSystemHelper() : ControlSystemHelper(){};
-  MOCK_CONST_METHOD6(computeVelocity,
-                     double(double targetSetPoint_, double initialVelocity_,
-                            double kp_, double ki_, double kd_, double dt_));
+  MockControlSystemHelper() : ControlSystemHelper() {}
+  MOCK_METHOD6(computeVelocity,
+               double(double targetSetPoint_, double initialVelocity_,
+                      double kp_, double ki_, double kd_, double dt_));
 };
 
+/**
+ *  @brief Test the computeControlSignalInfo method in PIDController class using
+ * object of mock class MockControlSystemHelper
+ */
 TEST(MockControlSystemHelperTests, CheckCompute) {
   MockControlSystemHelper mcsh;
+  PIDController pid;
   // GMock: specify a simple return value using Return(x)
   // Here, part of the test is that the Mock should be called once,
   // hence the 'WillOnce' call (more than one call would be an error).
@@ -41,7 +50,8 @@ TEST(MockControlSystemHelperTests, CheckCompute) {
       .Times(AtLeast(1))
       .WillOnce(Return(1200.0));
 
-  PIDController pid;
+  // get a value from computeControlSignalInfo of PIDController object
   double returnValue = pid.computeControlSignalInfo(mcsh, 100.0, 0.0);
+  // check if the returned value equality holds
   EXPECT_EQ(returnValue, 1200.0);
 }

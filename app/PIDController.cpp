@@ -53,7 +53,8 @@ double PIDController::computeControlSignalInfo(ControlSystemHelper &helper,
                                                double initialVelocity) {
   double commandVelocity =
       helper.computeVelocity(targetSetPoint, initialVelocity, Kp, Ki, Kd, dt);
-  std::cout << "$$$$$$$$$$$$$$$$$$$$$$$" << commandVelocity << std::endl;
+  // debug
+  // std::cout << "$$$$$$$$$$$$$$$$$$$$$$$" << commandVelocity << std::endl;
   double error = helper.computeError(targetSetPoint);
   return commandVelocity;
 }
