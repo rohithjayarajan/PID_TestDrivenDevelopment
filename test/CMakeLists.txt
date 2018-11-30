@@ -4,6 +4,7 @@ add_executable(
     cpp-test
     main.cpp
     test.cpp
+    GmockTest.cpp
     ../app/PIDController.cpp
     ../app/ControlSystemHelper.cpp
 )
