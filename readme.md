@@ -1,28 +1,23 @@
-# Test_Driven_Development_A
+# Google Mock Test Exercise
 [![Build Status](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment.svg?branch=master)](https://travis-ci.org/rohithjayarajan/PID_TestDrivenDevelopment)
 [![Coverage Status](https://coveralls.io/repos/github/rohithjayarajan/PID_TestDrivenDevelopment/badge.svg?branch=master)](https://coveralls.io/github/rohithjayarajan/PID_TestDrivenDevelopment?branch=master)
 
 ---
 
 ## Overview
-Test driven development project to design a PID controller.
-#### Authors - Rohith Jayarajan(Driver) Harsh Kakashaniya(Navigator) as Team A, for Part 1
-#### Authors - Likhita Madiraju(Driver) Ajeet Wankhede(Navigator) as Team B, for Part 2 
-
-## Group Discussion Notes
-
-1. The implementation and test passing satisfy the original class design.   
-2. To Do- To check if PID Controller is converging for given values of gains. 
+Testing a project of a simple PID controller using GMock framework. The class ControlSystemHelper is mocked and the 
+methods computeError and computeVelocity of the mocked class is used in the testing phase. The method computeControlSignalInfo in PIDController class uses the mocked method computeVelocity, whereas the method computeTrackingError in PIDController class uses the mocked method computeError. The returned value from PIDController class methods computeControlSignalInfo and computeTrackingError is checked to be consistent with the values reutrned by the mock class. All the written tests, using gtest and gmock framework, were succesfully passed by the implementation. No dependencies exist to execute the code on this repository. The different CMakeLists.txt have been modified appropriately to ensure GMock testing runs
  
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
+git clone --single-branch -b  GMock_Extra_Credit https://github.com/rohithjayarajan/PID_TestDrivenDevelopment.git
 cd PID_TestDrivenDevelopment
 mkdir build
 cd build
 cmake ..
 make
 Run program: ./app/shell-app
+Run tests: ./test/cpp-test
 ```
 
 ## Building for code coverage
