@@ -40,8 +40,9 @@ PIDController::~PIDController() {}
 /**
  *   @brief Function to compute Control Signal information given
  *          a known target setpoint and the
- *          actual velocity
+ *          initial velocity
  *
+ *   @param object of class ControlSystemHelper
  *   @param targetSetpoint is a double value of the
  *          setpoint of the target
  *   @param initialVelocity is the actual velocity of
@@ -55,8 +56,21 @@ double PIDController::computeControlSignalInfo(ControlSystemHelper &helper,
       helper.computeVelocity(targetSetPoint, initialVelocity, Kp, Ki, Kd, dt);
   // debug
   // std::cout << "$$$$$$$$$$$$$$$$$$$$$$$" << commandVelocity << std::endl;
-  double error = helper.computeError(targetSetPoint);
   return commandVelocity;
+}
+/**
+ *   @brief Function to compute Control Signal information (command velocity)
+ * given a known target setpoint and the intial velocity
+ *
+ *   @param object of class ControlSystemHelper
+ *   @param targetSetpoint is a double value of the
+ *          setpoint of the target
+ *   @return double value of the tracking error
+ */
+double PIDController::computeTrackingError(ControlSystemHelper &helper,
+                                           double targetSetPoint) {
+  double error = helper.computeError(targetSetPoint);
+  return error;
 }
 /**
  *   @brief Function to set PID gain Kp

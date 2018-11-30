@@ -43,9 +43,8 @@ class PIDController {
    */
   virtual ~PIDController();
   /**
-   *   @brief Function to compute Control Signal information given
-   *          a known target setpoint and the
-   *          actual velocity
+   *   @brief Function to compute Control Signal information (command velocity)
+   * given a known target setpoint and the actual velocity
    *
    *   @param targetSetpoint is a double value of the
    *          setpoint of the target
@@ -55,6 +54,17 @@ class PIDController {
    */
   double computeControlSignalInfo(ControlSystemHelper &helper,
                                   double targetSetPoint, double actualVelocity);
+  /**
+   *   @brief Function to compute Control Signal information (tracking error)
+   * given a known target setpoint
+   *
+   *   @param object of class ControlSystemHelper
+   *   @param targetSetpoint is a double value of the
+   *          setpoint of the target
+   *   @return double value of the tracking error
+   */
+  double computeTrackingError(ControlSystemHelper &helper,
+                              double targetSetPoint);
   /**
    *   @brief Function to set PID gain Kp
    *
