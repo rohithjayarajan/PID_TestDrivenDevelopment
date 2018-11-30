@@ -56,10 +56,12 @@ double ControlSystemHelper::computeVelocity(double targetSetPoint_,
                                             double initialVelocity_, double kp_,
                                             double ki_, double kd_,
                                             double dt_) {
+  // set the public variables according to the input
   Kp = kp_;
   Ki = ki_;
   Kd = kd_;
   dt = dt_;
+  // set the outputVelocity given by the below formula
   outputVelocity = (Kp) * (targetSetPoint_ - initialVelocity_) +
                    (Ki) * (targetSetPoint_ - initialVelocity_) * (dt) +
                    (Kd) * (targetSetPoint_ - initialVelocity_) / (dt);

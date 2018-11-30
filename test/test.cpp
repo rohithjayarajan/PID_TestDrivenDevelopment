@@ -1,8 +1,8 @@
 /**
  *  Copyright 2018 rohith jayarajan
  *  @file    test.cpp
- *  @author  rohithjayarajan (driver) and harshkakashaniya (navigator)
- *  @date    9/22/2018
+ *  @author  rohithjayarajan
+ *  @date    11/30/2018
  *  @version 1.0
  *
  *  @brief UMD ENPM 808X, Week 4, Test Driven Development

@@ -25,6 +25,7 @@
  *   @return nothing
  */
 PIDController::PIDController() {
+  // intialize public variables
   Kp = 10.0;
   Ki = 100.0;
   Kd = 0.01;
@@ -52,6 +53,7 @@ PIDController::~PIDController() {}
 double PIDController::computeControlSignalInfo(ControlSystemHelper &helper,
                                                double targetSetPoint,
                                                double initialVelocity) {
+  // get the command velocity by using method of class ControlSystemHelper
   double commandVelocity =
       helper.computeVelocity(targetSetPoint, initialVelocity, Kp, Ki, Kd, dt);
   // debug
@@ -69,6 +71,8 @@ double PIDController::computeControlSignalInfo(ControlSystemHelper &helper,
  */
 double PIDController::computeTrackingError(ControlSystemHelper &helper,
                                            double targetSetPoint) {
+  // get the velocity tracking error by using method of class
+  // ControlSystemHelper
   double error = helper.computeError(targetSetPoint);
   return error;
 }
