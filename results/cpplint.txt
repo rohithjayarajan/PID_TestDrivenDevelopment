@@ -1,0 +1,11 @@
+Done processing ./test/test.cpp
+Done processing ./test/GmockTest.cpp
+Done processing ./test/main.cpp
+Done processing ./include/ControlSystemHelper.hpp
+./include/PIDController.hpp:55:  Is this a non-const reference? If so, make const or use a pointer: ControlSystemHelper &helper  [runtime/references] [2]
+./include/PIDController.hpp:66:  Is this a non-const reference? If so, make const or use a pointer: ControlSystemHelper &helper  [runtime/references] [2]
+Done processing ./include/PIDController.hpp
+Done processing ./app/ControlSystemHelper.cpp
+Done processing ./app/PIDController.cpp
+Done processing ./app/main.cpp
+Total errors found: 2
