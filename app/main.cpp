@@ -14,10 +14,12 @@
  *
  */
 
+#include <ControlSystemHelper.hpp>
 #include <PIDController.hpp>
 
 int main() {
   PIDController PID;
+  ControlSystemHelper helper;
 
   PID.setGainKp(0.4);
   PID.setGainKi(0.2);
@@ -28,7 +30,8 @@ int main() {
   std::cout << "Initial velocity = " << actualVelocity << std::endl;
   std::cout << "Reference velocity = " << setVelocity << std::endl;
 
-  actualVelocity = PID.computeControlSignalInfo(setVelocity, actualVelocity);
+  actualVelocity =
+      PID.computeControlSignalInfo(helper, setVelocity, actualVelocity);
   std::cout << "Current velocity = " << actualVelocity << std::endl;
 
   std::cout << "Values of PID gains are as follows" << std::endl;
