@@ -17,6 +17,7 @@
 #define INCLUDE_PIDCONTROLLER_HPP_
 
 #include <iostream>
+#include "ControlSystemHelper.hpp"
 
 /**
  *  @brief Class PIDController
@@ -52,7 +53,8 @@ class PIDController {
    *          the type double
    *   @return double value of the commandVelocity velocity
    */
-  double computeControlSignalInfo(double targetSetPoint, double actualVelocity);
+  double computeControlSignalInfo(ControlSystemHelper &helper,
+                                  double targetSetPoint, double actualVelocity);
   /**
    *   @brief Function to set PID gain Kp
    *

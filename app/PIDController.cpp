@@ -48,11 +48,12 @@ PIDController::~PIDController() {}
  *          the type double
  *   @return double value of the commandVelocity velocity
  */
-double PIDController::computeControlSignalInfo(double targetSetPoint,
+double PIDController::computeControlSignalInfo(ControlSystemHelper &helper,
+                                               double targetSetPoint,
                                                double initialVelocity) {
-  ControlSystemHelper helper;
   double commandVelocity =
       helper.computeVelocity(targetSetPoint, initialVelocity, Kp, Ki, Kd, dt);
+  std::cout << "$$$$$$$$$$$$$$$$$$$$$$$" << commandVelocity << std::endl;
   double error = helper.computeError(targetSetPoint);
   return commandVelocity;
 }
