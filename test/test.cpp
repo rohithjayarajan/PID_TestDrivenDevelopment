@@ -15,6 +15,7 @@
 
 #include <gtest/gtest.h>
 #include <memory>
+#include "ControlSystemHelper.hpp"
 #include "PIDController.hpp"
 
 //  test to ensure Kp is set
@@ -45,4 +46,14 @@ TEST(PIDController, isDtSet) {
 TEST(PIDController, dtGreaterThanZeroCheck) {
   PIDController testObject6;
   EXPECT_LT(0.0, testObject6.getTimeStep());
+}
+//  test for computeVelocity method from ControlSystemHelper class
+TEST(ControlSystemHelper, testComputeVelocity) {
+  ControlSystemHelper testObject7;
+  EXPECT_EQ(300.0, testObject7.computeVelocity(100.0, 0, 1, 1, 1, 1));
+}
+//  test for computeError method from ControlSystemHelper class
+TEST(ControlSystemHelper, testComputeError) {
+  ControlSystemHelper testObject8;
+  EXPECT_EQ(100.0, testObject8.computeError(100.0));
 }
